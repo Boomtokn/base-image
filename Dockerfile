@@ -1,6 +1,6 @@
 ARG BASE_IMAGE_TYPE=slim
 
-FROM ghcr.io/containerbase/sidecar:13.7.2@sha256:24d27d2401179f956ce7fe16d3c22c1d75f22988d4f54a1450654127ecdcf698 AS base
+FROM ghcr.io/containerbase/sidecar:13.8.3@sha256:299b40aed14d94fc73e57b646e3e67626ab08241488ac5d2a0abdc57f91ef088 AS base
 
 # sidecar defaults to 1000
 USER root
@@ -32,11 +32,11 @@ ARG APT_HTTP_PROXY
 RUN install-tool java 21.0.6+7.0.LTS
 
 # renovate: datasource=gradle-version
-RUN install-tool gradle 8.12.1
+RUN install-tool gradle 8.13
 
 
 # renovate: datasource=github-releases packageName=containerbase/erlang-prebuild versioning=docker
-RUN install-tool erlang 27.2.1.0
+RUN install-tool erlang 27.2.4.0
 
 # renovate: datasource=github-releases packageName=elixir-lang/elixir
 RUN install-tool elixir v1.18.2
@@ -46,18 +46,18 @@ RUN install-tool elixir v1.18.2
 RUN install-tool php 8.3.14
 
 # renovate: datasource=github-releases packageName=containerbase/composer-prebuild
-RUN install-tool composer 2.8.5
+RUN install-tool composer 2.8.6
 
 
 # renovate: datasource=golang-version
-RUN install-tool golang 1.23.6
+RUN install-tool golang 1.24.0
 
 
 # renovate: datasource=github-releases packageName=containerbase/python-prebuild
 RUN install-tool python 3.13.2
 
 # renovate: datasource=pypi
-RUN install-tool conan 2.12.2
+RUN install-tool conan 2.13.0
 
 # renovate: datasource=pypi
 RUN install-tool hashin 1.0.3
@@ -75,18 +75,18 @@ RUN install-tool pipenv 2024.4.1
 RUN install-tool poetry 1.8.5
 
 # renovate: datasource=pypi
-RUN install-tool uv 0.6.0
+RUN install-tool uv 0.6.3
 
 
 # renovate: datasource=docker
-RUN install-tool rust 1.84.1
+RUN install-tool rust 1.85.0
 
 
 # renovate: datasource=github-releases packageName=containerbase/ruby-prebuild
 RUN install-tool ruby 3.3.6
 
 # renovate: datasource=rubygems
-RUN install-tool bundler 2.6.3
+RUN install-tool bundler 2.6.5
 
 # renovate: datasource=rubygems
 RUN install-tool cocoapods 1.16.2
@@ -127,7 +127,7 @@ RUN install-tool yarn 4.6.0
 
 
 # renovate: datasource=dart-version
-RUN install-tool dart 3.7.0
+RUN install-tool dart 3.7.1
 
 # renovate: datasource=flutter-version
 RUN install-tool flutter 3.27.4
