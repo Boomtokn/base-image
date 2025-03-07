@@ -1,6 +1,6 @@
 ARG BASE_IMAGE_TYPE=slim
 
-FROM ghcr.io/containerbase/sidecar:13.8.3@sha256:299b40aed14d94fc73e57b646e3e67626ab08241488ac5d2a0abdc57f91ef088 AS base
+FROM ghcr.io/containerbase/sidecar:13.8.4@sha256:a3b46b12a8fe1314516f25b6c5e85735fbb83be8b7a2bdc5c146386197c366fb AS base
 
 # sidecar defaults to 1000
 USER root
@@ -75,7 +75,7 @@ RUN install-tool pipenv 2024.4.1
 RUN install-tool poetry 1.8.5
 
 # renovate: datasource=pypi
-RUN install-tool uv 0.6.3
+RUN install-tool uv 0.6.4
 
 
 # renovate: datasource=docker
@@ -105,7 +105,7 @@ RUN install-tool jb v0.6.0
 
 
 # renovate: datasource=npm
-RUN install-tool bun 1.2.2
+RUN install-tool bun 1.2.3
 
 
 # renovate: datasource=github-releases packageName=containerbase/nix-prebuild
@@ -120,7 +120,7 @@ RUN install-tool bazelisk v1.25.0
 RUN install-tool node 22.14.0
 
 # renovate: datasource=npm
-RUN install-tool pnpm 9.15.5
+RUN install-tool pnpm 9.15.6
 
 # renovate: datasource=npm packageName=@yarnpkg/cli-dist
 RUN install-tool yarn 4.6.0
